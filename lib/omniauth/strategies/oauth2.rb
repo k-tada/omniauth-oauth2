@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "oauth2"
 require "omniauth"
 require "securerandom"
@@ -49,7 +50,7 @@ module OmniAuth
       end
 
       def request_phase
-        redirect client.auth_code.authorize_url({:redirect_uri => callback_url}.merge(authorize_params))
+        redirect client.auth_code.authorize_url(authorize_params)
       end
 
       def authorize_params
